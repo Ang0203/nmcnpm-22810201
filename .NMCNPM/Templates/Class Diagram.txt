@@ -1,0 +1,45 @@
+@startuml
+
+!theme toy
+scale 2
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam layoutOrientation leftToRight
+skinparam defaultFontName "Helvetica Neue"
+skinparam defaultFontSize 11
+skinparam defaultFontStyle bold
+skinparam titleFontSize 13
+title "22810201 NMCNPM - Class Diagram (Backend)"
+
+interface IUserService {
+  +register(): void
+  +login(): void
+  +startConversation(): void
+}
+
+interface IConversationService {
+  +startConversation(): void
+  +deleteConversation(): void
+  +archiveConversation(): void
+  +addMessage(msg: Message): void
+}
+
+interface IMessageService {
+  +processMessage(text: String, sender: String): String
+}
+
+interface ISpeechService {
+  +speechToText(audio: Blob): String
+  +textToSpeech(text: String): Blob
+}
+
+class UserService implements IUserService
+class ConversationService implements IConversationService
+class MessageService implements IMessageService
+class SpeechService implements ISpeechService
+
+UserService --> ConversationService : uses
+ConversationService --> MessageService : uses
+MessageService --> SpeechService : uses
+
+@enduml

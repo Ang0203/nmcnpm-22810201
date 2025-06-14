@@ -1,0 +1,67 @@
+@startuml
+
+!theme toy
+scale 2
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam layoutOrientation leftToRight
+skinparam defaultFontName "Helvetica Neue"
+skinparam defaultFontSize 13
+skinparam defaultFontStyle bold
+skinparam titleFontSize 15
+title "22810201 NMCNPM - Component Diagram (Frontend)"
+
+package "Core" {
+  [index.js]
+  [main.js]
+  [language.js]
+  [dictionary.js]
+}
+
+package "Support" {
+  [utils.js]
+  [send.js]
+  [tts.js]
+}
+
+package "Conversation" {
+  [conversation.js]
+}
+
+package "Speech" {
+  [audio.js]
+  [recording.js]
+  [voice.js]
+  [stt.js] <<interface>>
+}
+
+[index.js] --> [main.js]
+[index.js] --> [language.js]
+[index.js] --> [dictionary.js]
+[main.js] --> [conversation.js]
+[main.js] --> [recording.js]
+[main.js] --> [send.js]
+
+[conversation.js] --> [voice.js]
+[conversation.js] --> [send.js]
+[conversation.js] --> [tts.js]
+
+[audio.js] --> [tts.js]
+
+[recording.js] ..|> [stt.js]
+[voice.js] ..|> [stt.js]
+
+note top of utils.js
+  used by everything
+end note
+
+note top of language.js
+  used by some for
+  fetching resource strings
+end note
+
+note top of audio.js
+  used to create audio buttons
+end note
+
+@enduml

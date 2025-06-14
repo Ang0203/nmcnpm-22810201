@@ -1,0 +1,54 @@
+@startuml
+
+!theme toy
+scale 2
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam layoutOrientation leftToRight
+skinparam defaultFontName "Helvetica Neue"
+skinparam defaultFontSize 13
+skinparam defaultFontStyle bold
+skinparam titleFontSize 15
+title "22810201 NMCNPM - Entity Relationship Diagram"
+
+entity "User" as U {
+  *userId : String
+  --
+  email : String
+  username : String
+  password : String
+}
+
+entity "Conversation" as C {
+  *conversationId : String
+  --
+  title : String
+  createdAt : DateTime
+  status: String
+}
+
+entity "Message" as M {
+  *messageId : String
+  --
+  content : String
+  timestamp : DateTime
+  senderType : String
+}
+
+entity "UserConversation" as UC {
+  *userId : String
+  *conversationId : String
+}
+
+entity "MessageConversation" as MC {
+  *messageId : String
+  *conversationId : String
+}
+
+U "1" -- "*" UC
+C "1" -- "*" UC
+
+C "1" -- "*" MC
+M "1" -- "*" MC
+
+@enduml
