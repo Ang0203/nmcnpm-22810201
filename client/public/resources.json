@@ -1,0 +1,36 @@
+{
+    "en": {
+        "chatTitle": "English Chat",
+        "clearChat": "Clear Chat",
+        "transcript": "Transcribe",
+        "confirmClearChat": "Are you sure you want to delete all messages?",
+        "inputPlaceholder": "Enter your message...",
+        "processingMessage": "Processing...",
+        "recordingMessage": "Recording...",
+        "errorMessageLength": "Message must not exceed 1000 characters.",
+        "errorSendingMessage": "Error while sending message:",
+        "errorPlayAudio": "Error while playing audio:",
+        "errorUnknown": "Unknown error occurred:",
+        "errorWebSpeech": "Your browser does not support Web Speech API.",
+        "errorVoiceNotSupported": "Your browser does not support voice speech.",
+        "errorVoiceRecording": "Microphone not found or access denied. Please ensure your microphone is plugged in and allow the site to use it.",
+        "language": "English"
+    },
+    "vi": {
+        "chatTitle": "Trò Chuyện Tiếng Anh",
+        "clearChat": "Xóa Tin Nhắn",
+        "transcript": "Chép Lời",
+        "confirmClearChat": "Bạn có chắc chắn muốn xóa tất cả tin nhắn không?",
+        "inputPlaceholder": "Nhập tin nhắn...",
+        "processingMessage": "Đang xử lý...",
+        "recordingMessage": "Đang ghi âm...",
+        "errorMessageLength": "Tin nhắn không được vượt quá 1000 ký tự.",
+        "errorSendingMessage": "Lỗi khi gửi tin nhắn:",
+        "errorPlayAudio": "Lỗi khi phát âm thanh:",
+        "errorUnknown": "Lỗi không xác định:",
+        "errorWebSpeech": "Trình duyệt của bạn không hỗ trợ Web Speech API.",
+        "errorVoiceNotSupported": "Trình duyệt của bạn không hỗ trợ phát giọng nói.",
+        "errorVoiceRecording": "Không phát hiện micro hoặc bị từ chối quyền truy cập. Vui lòng kiểm tra micro đã cắm và cấp quyền sử dụng cho trang web.",
+        "language": "Tiếng Việt"
+    }
+}
